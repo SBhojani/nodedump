@@ -91,6 +91,7 @@ table.nodedump td.nodedump-data pre code { font-size: small; font-family: Consol
 \n\
 table.nodedump-String { background-color: #888888; }\
 table.nodedump-String td.nodedump-String { background-color: #dddddd; }\
+table.nodedump-String td.nodedump-data { white-space: pre; }\
 table.nodedump-Number { background-color: #FF8833; }\
 table.nodedump-Number td.nodedump-Number { background-color: #FFB885; }\
 table.nodedump-Boolean { background-color : #eebb00; }\
