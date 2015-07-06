@@ -118,7 +118,7 @@ table.nodedump-RegExp th.nodedump-RegExp { background-color: #aa66aa; }\
 table.nodedump-RegExp td.nodedump-RegExp { background-color: #ffddff; }\
 table.nodedump-Error { background-color: #CC3300; }\
 table.nodedump-Error th.nodedump-Error { background-color: #CC3300; }\
-table.nodedump-Error th.nodedump-data { white-space: pre; }\
+table.nodedump-Error td.nodedump-data { white-space: pre; }\
 table.nodedump-'+CIRCULARREFERENCE+', table.nodedump-'+ERRORDATATYPE+' { background-color: #333333; }\
 table.nodedump-'+CIRCULARREFERENCE+' td.nodedump-'+CIRCULARREFERENCE+', table.nodedump-'+ERRORDATATYPE+' th.nodedump-'+ERRORDATATYPE+' { background-color: #333333; }\
 table.nodedump-'+CIRCULARREFERENCE+' td.nodedump-label { color: #ffffff; }\n\
