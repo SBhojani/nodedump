@@ -8,8 +8,8 @@
 * 
  * requires
  */
-// var util = require('util');
-var format = require('util').format;
+var util = require('util');
+var format = util.format;
 // var format = require('format').format;
 var hljs = require('./lib/highlight.js/highlight');
 
@@ -118,6 +118,7 @@ table.nodedump-RegExp th.nodedump-RegExp { background-color: #aa66aa; }\
 table.nodedump-RegExp td.nodedump-RegExp { background-color: #ffddff; }\
 table.nodedump-Error { background-color: #CC3300; }\
 table.nodedump-Error th.nodedump-Error { background-color: #CC3300; }\
+table.nodedump-Error th.nodedump-data { white-space: pre; }\
 table.nodedump-'+CIRCULARREFERENCE+', table.nodedump-'+ERRORDATATYPE+' { background-color: #333333; }\
 table.nodedump-'+CIRCULARREFERENCE+' td.nodedump-'+CIRCULARREFERENCE+', table.nodedump-'+ERRORDATATYPE+' th.nodedump-'+ERRORDATATYPE+' { background-color: #333333; }\
 table.nodedump-'+CIRCULARREFERENCE+' td.nodedump-label { color: #ffffff; }\n\
@@ -544,7 +545,9 @@ function dumpObject(obj, cache, currentPath, options){
 							if(!(!options.show || (options.show.length && (options.show.indexOf(key) >= 0 || options.show.indexOf(Number(key)) >= 0)))){
 								numKeysHidden++;
 								continue;
-							} else if(options.hide && options.hide.length && (options.hide.indexOf(key) >= 0 || options.hide.indexOf(Number(key)) >= 0)){
+							} else if (options.hide && options.hide.length && (options.hide.indexOf(key) >= 0 || options.hide.indexOf(Number(key)) >= 0 || options.hide.filter(util.isRegExp).some(function (regExp) {
+									return regExp.test(key);
+								}))) {
 								numKeysHidden++;
 								continue;
 							}
